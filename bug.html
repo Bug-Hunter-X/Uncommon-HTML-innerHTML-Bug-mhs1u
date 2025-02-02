@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    //Incorrectly using innerHTML to manipulate the div element's content
+    document.getElementById("myDiv").innerHTML = "<p>This is a paragraph.</p>";
+    //This will erase the original content of the div, because it does a full replacement of the content, thus removing the original innerHTML
+    document.getElementById("myDiv").innerHTML += "<p>This is another paragraph.</p>";
+  </script>
+</body>
+</html>
